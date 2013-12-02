@@ -2,18 +2,15 @@ module.exports = function(grunt) {
   grunt.initConfig({
 
     karma: {
+      options: {
+        configFile: 'karma.conf.js'
+      },
       unit: {
-        options: {
-          files: [
-            {pattern: "js/**/*.js", included: false},
-            {pattern: "specs/**/*.js", included: false},
-            "specs/spec-main.js"]
-        },
         background: true
       }
     },
 
-    watch: {
+    originalWatch: {
       karma: {
         files: ['js/**/*.js', 'specs/**/*.js'],
         tasks: ['karma:unit:run']
@@ -23,4 +20,8 @@ module.exports = function(grunt) {
 
   grunt.loadNpmTasks('grunt-karma');
   grunt.loadNpmTasks('grunt-contrib-watch');
+
+  grunt.renameTask('watch', 'originalWatch');
+
+  grunt.registerTask('watch', ['karma:unit:start', 'originalWatch']);
 };
