@@ -1,13 +1,31 @@
-define(['test-util/expect'], function(expect) {
+define(['lodash', 'test-util/expect', 'js/presenter'], 
+       function(_, expect, presenterModule) {
 
-  describe('first tests', function() {
-    it('fails', function() {
-      expect(1).to.equal(2);
+  describe('Gameboard presenter', function() {
+    var presenter,
+        graphics;
+
+    beforeEach(function() {
+      graphics = {
+        drawLine: sinon.spy()
+      };
+
+      presenter = presenterModule.create(graphics);
     });
 
-    it('works with sinon', function() {
-      var stub = sinon.stub();
-      expect(stub).to.have.been.called;
+    it('draws a grid', function() {
+      presenter.drawBoard();
+      var linePositions = _.range(15, 303, 16);
+
+      // vertical lines
+      linePositions.forEach(function(pos) {
+        expect(graphics.drawLine).to.have.been.calledWith(0, pos, 303, pos);
+      });
+
+      // horizontal lines
+      linePositions.forEach(function(pos) {
+        expect(graphics.drawLine).to.have.been.calledWith(pos, 0, pos, 303);
+      });
     });
   });
 });

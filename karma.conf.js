@@ -19,8 +19,9 @@ module.exports = function(config) {
       {pattern: 'test-util/chai.js', included: false},
       {pattern: 'test-util/sinon-chai.js', included: false},
       {pattern: 'test-util/expect.js', included: false},
-      {pattern: 'test-util/sinon-1.7.3.js', included: true},
-      {pattern: 'test-util/spec-main.js', included: true}
+      {pattern: 'js/lodash.min.js', included: false},
+      'test-util/sinon-1.7.3.js',
+      'test-util/spec-main.js'
     ],
 
     plugins: [
