@@ -5,15 +5,18 @@ module.exports = function(grunt) {
       options: {
         configFile: 'karma.conf.js'
       },
-      unit: {
+      watch: {
         background: true
+      },
+      unit: {
+        singleRun: true
       }
     },
 
     originalWatch: {
       karma: {
         files: ['js/**/*.js', 'specs/**/*.js'],
-        tasks: ['karma:unit:run']
+        tasks: ['karma:watch:run']
       }
     }
   });
@@ -23,5 +26,6 @@ module.exports = function(grunt) {
 
   grunt.renameTask('watch', 'originalWatch');
 
-  grunt.registerTask('watch', ['karma:unit:start', 'originalWatch']);
+  grunt.registerTask('watch', ['karma:watch:start', 'originalWatch']);
+  grunt.registerTask('test', ['karma:unit']);
 };
