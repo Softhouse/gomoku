@@ -17,6 +17,9 @@ module.exports = function(config) {
       {pattern: 'js/**/*.js', included: false, served: true},
       {pattern: 'specs/**/*.js', included: false},
       {pattern: 'test-util/chai.js', included: false},
+      {pattern: 'test-util/sinon-chai.js', included: false},
+      {pattern: 'test-util/expect.js', included: false},
+      {pattern: 'test-util/sinon-1.7.3.js', included: true},
       {pattern: 'test-util/spec-main.js', included: true}
     ],
 
