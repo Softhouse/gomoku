@@ -1,4 +1,4 @@
-define(['presenter', 'domReady!'], function(presenter){
+define(['presenter', 'external/domReady!'], function(presenter){
   var canvas = document.getElementById('board'),
   prs = presenter.create(canvas);
 
