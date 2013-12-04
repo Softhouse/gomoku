@@ -5,4 +5,5 @@ define(['presenter', 'domReady!'], function(presenter){
   prs.drawBoard();
   prs.drawPiece(2,2);
   prs.drawPiece(7,3, true);
+  prs.whenClicked(console.log.bind(console));
 });
