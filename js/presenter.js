@@ -1,6 +1,7 @@
 define(function() {
 
-  function create(graphics) {
+  function create(graphics, canvas) {
+    var ctxt = canvas.getContext('2d');
 
     function drawBoard() {
       var x, y;
@@ -12,8 +13,23 @@ define(function() {
 
     }
 
+    function drawPiece(col, row, filled) {
+      var x = col * 16 + 7;
+      var y = row * 16 + 7;
+      var radius = 6;
+
+      ctxt.beginPath();
+      ctxt.arc(x, y, radius, 0, 2 * Math.PI);
+
+      if(filled) {
+        ctxt.fill();
+      }
+      ctxt.stroke();
+    }
+
     return {
-      drawBoard: drawBoard
+      drawBoard: drawBoard,
+      drawPiece: drawPiece
     };
   }
   
