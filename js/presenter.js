@@ -6,27 +6,26 @@ define(function() {
     function drawBoard() {
       var x;
 
-      for(x=15; x<304; x+=16) {
+      for(x=0; x<=304; x+=16) {
         // Horizontal lines
         ctxt.lineWidth = 1;
         ctxt.beginPath();
         ctxt.moveTo(x, 0);
-        ctxt.lineTo(x, 303);
+        ctxt.lineTo(x, 304);
         ctxt.stroke();
 
         // Vertical lines
-        ctxt.lineWidth = 1;
         ctxt.beginPath();
         ctxt.moveTo(0, x);
-        ctxt.lineTo(303, x);
+        ctxt.lineTo(304, x);
         ctxt.stroke();
       };
 
     }
 
     function drawPiece(col, row, filled) {
-      var x = col * 16 + 7;
-      var y = row * 16 + 7;
+      var x = col * 16 + 8;
+      var y = row * 16 + 8;
       var radius = 6;
 
       ctxt.beginPath();
