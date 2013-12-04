@@ -1,7 +1,6 @@
-define(['presenter', 'graphics', 'domReady!'], function(presenter, graphics){
+define(['presenter', 'domReady!'], function(presenter){
   var canvas = document.getElementById('board'),
-  gfx = graphics.create(canvas.getContext('2d')),
-  prs = presenter.create(gfx, canvas);
+  prs = presenter.create(canvas);
 
   prs.drawBoard();
   prs.drawPiece(2,2);

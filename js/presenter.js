@@ -1,14 +1,25 @@
 define(function() {
 
-  function create(graphics, canvas) {
+  function create(canvas) {
     var ctxt = canvas.getContext('2d');
 
     function drawBoard() {
-      var x, y;
+      var x;
 
       for(x=15; x<304; x+=16) {
-        graphics.drawLine(x, 0, x, 303);
-        graphics.drawLine(0, x, 303, x);
+        // Horizontal lines
+        ctxt.lineWidth = 1;
+        ctxt.beginPath();
+        ctxt.moveTo(x, 0);
+        ctxt.lineTo(x, 303);
+        ctxt.stroke();
+
+        // Vertical lines
+        ctxt.lineWidth = 1;
+        ctxt.beginPath();
+        ctxt.moveTo(0, x);
+        ctxt.lineTo(303, x);
+        ctxt.stroke();
       };
 
     }
