@@ -1,5 +1,10 @@
-.board-container {
+.game-container {
   margin: 10px;
+}
+
+.board-container {
+  float: left;
+  margin-right: 10px;
 }
 
 #board {
