@@ -20,6 +20,10 @@ module.exports = function(grunt) {
         options: {
           livereload: true
         }
+      },
+      files: ['routes/**/*.js', 'views/**/*.jade', 'public/**/*.css'],
+      options: {
+        livereload: true
       }
     },
 
