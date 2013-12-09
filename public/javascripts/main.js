@@ -1,6 +1,5 @@
 define(['boardUI', 'statusUI', 'external/domReady!'], function(boardUI, statusUI){
-  var canvas = document.getElementById('board'),
-      bui = boardUI.create(canvas),
+  var bui = boardUI.create(),
       sui = statusUI.create(document.getElementById('next-player-container'),
                             document.getElementById('winner-container'));
 
