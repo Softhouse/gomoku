@@ -1,7 +1,14 @@
 {
   "name": "gomoku",
   "version": "0.0.1",
-  "description": "Gomoku is an abstract strategy board game. Also called Gobang or Five in a Row, it is traditionally played with Go pieces (black and white stones) on a go board with 19x19 intersections; however, because once placed, pieces are not moved or removed from the board, gomoku may also be played as a paper and pencil game. This game is known in several countries under different names.",
+  "private": true,
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "express": "3.4.6",
+    "jade": "*"
+  },
   "devDependencies": {
     "grunt": "~0.4.2",
     "karma-script-launcher": "~0.1.0",
@@ -20,4 +27,5 @@
     "karma-mocha": "~0.1.1",
     "karma-chai": "0.0.2"
   }
+
 }

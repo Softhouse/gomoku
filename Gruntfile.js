@@ -15,14 +15,16 @@ module.exports = function(grunt) {
 
     originalWatch: {
       karma: {
-        files: ['js/**/*.js', 'specs/**/*.js'],
+        files: ['public/**/*.js'],
         tasks: ['karma:watch:run']
       }
     }
+
   });
 
   grunt.loadNpmTasks('grunt-karma');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  // grunt.loadNpmTasks('grunt-reload');
 
   grunt.renameTask('watch', 'originalWatch');
 

@@ -1,0 +1,10 @@
+extends layout
+
+block content
+  h1= title
+  .game-container
+    .board-container
+      canvas#board(width="304", height="304")
+    .game-status-container
+      #next-player-container
+      #winner-container
