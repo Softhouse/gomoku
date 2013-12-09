@@ -26,6 +26,7 @@
     "mocha": "~1.14.0",
     "karma-mocha": "~0.1.1",
     "karma-chai": "0.0.2",
-    "grunt-express-server": "~0.4.9"
+    "grunt-express-server": "~0.4.9",
+    "grunt-reload": "~0.2.0"
   }
 }

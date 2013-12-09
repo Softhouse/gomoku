@@ -16,7 +16,10 @@ module.exports = function(grunt) {
     originalWatch: {
       karma: {
         files: ['public/**/*.js'],
-        tasks: ['karma:watch:run']
+        tasks: ['karma:watch:run', 'reload'],
+        options: {
+          livereload: true
+        }
       }
     },
 
@@ -29,6 +32,14 @@ module.exports = function(grunt) {
           script: 'app.js'
         }
       }
+    },
+
+    reload: {
+      port: 6001,
+      proxy: {
+        host: 'localhost',
+        port: 3000
+      }
     }
 
   });
@@ -36,10 +47,10 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-karma');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-express-server');
-  // grunt.loadNpmTasks('grunt-reload');
+  grunt.loadNpmTasks('grunt-reload');
 
   grunt.renameTask('watch', 'originalWatch');
 
-  grunt.registerTask('watch', ['karma:watch:start', 'originalWatch']);
+  grunt.registerTask('watch', ['express:dev', 'reload', 'karma:watch:start', 'originalWatch']);
   grunt.registerTask('test', ['karma:unit']);
 };
