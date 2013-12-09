@@ -7,6 +7,17 @@ define(function() {
     function drawBoard() {
       var x;
 
+      // Clear the canvas
+      // Store the current transformation matrix
+      ctxt.save();
+
+      // Use the identity matrix while clearing the canvas
+      ctxt.setTransform(1, 0, 0, 1, 0, 0);
+      ctxt.clearRect(0, 0, canvas.width, canvas.height);
+
+      // Restore the transform
+      ctxt.restore();
+
       for(x=0; x<=304; x+=16) {
         // Horizontal lines
         ctxt.lineWidth = 1;
