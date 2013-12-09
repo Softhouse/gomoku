@@ -18,12 +18,24 @@ module.exports = function(grunt) {
         files: ['public/**/*.js'],
         tasks: ['karma:watch:run']
       }
+    },
+
+    express: {
+      options: {
+      },
+
+      dev: {
+        options: {
+          script: 'app.js'
+        }
+      }
     }
 
   });
 
   grunt.loadNpmTasks('grunt-karma');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-express-server');
   // grunt.loadNpmTasks('grunt-reload');
 
   grunt.renameTask('watch', 'originalWatch');
