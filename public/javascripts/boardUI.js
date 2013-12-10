@@ -39,15 +39,22 @@ define(function() {
     function drawPiece(col, row, filled) {
       var x = col * 16 + 16;
       var y = row * 16 + 16;
-      var radius = 6;
+      var radius = 8;
+
+      var blackfill = ctxt.createRadialGradient(x - radius/2,y - radius/2, 2,x - radius/2, y - radius/2 , radius);
+      blackfill.addColorStop(0, '#676767');
+      blackfill.addColorStop(1, '#000000');
+
+      var whitefill = ctxt.createRadialGradient(x - radius/2,y - radius/2, 2,x - radius/2, y - radius/2 , radius);
+      whitefill.addColorStop(0, '#ffffff');
+      whitefill.addColorStop(1, '#dddddd');
 
       ctxt.beginPath();
       ctxt.arc(x, y, radius, 0, 2 * Math.PI);
 
-      if(filled) {
-        ctxt.fill();
-      }
-      ctxt.stroke();
+      ctxt.fillStyle = filled ? blackfill : whitefill;
+      ctxt.setShadow(1, 1, 2, '#000' );
+      ctxt.fill();
     }
 
     function whenClicked(callback) {
