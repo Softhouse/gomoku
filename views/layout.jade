@@ -2,7 +2,9 @@ doctype 5
 html
   head
     title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
+    //link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet', href='/stylesheets/bootstrap.min.css')
     script(data-main='/javascripts/main' src='javascripts/external/require.js')
   body
-    block content
+    .container
+      block content

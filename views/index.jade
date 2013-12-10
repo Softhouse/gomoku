@@ -1,10 +1,14 @@
 extends layout
 
 block content
-  h1= title
-  .game-container
-    .board-container
+  .row
+    .col-md-2
+    .col-md-4
+      h1= title
+  .row
+    .col-md-2
+    .col-md-4
       canvas#board(width="304", height="304")
-    .game-status-container
-      #next-player-container
-      #winner-container
+    .col-md-2
+      #next-player
+      #winner

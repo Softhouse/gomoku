@@ -49,12 +49,22 @@ define(function() {
       whitefill.addColorStop(0, '#ffffff');
       whitefill.addColorStop(1, '#dddddd');
 
+      ctxt.save();
+
       ctxt.beginPath();
       ctxt.arc(x, y, radius, 0, 2 * Math.PI);
 
       ctxt.fillStyle = filled ? blackfill : whitefill;
-      ctxt.setShadow(1, 1, 2, '#000' );
+
+      // ctxt.setShadow(1, 1, 2, '#000' );
+
+      ctxt.shadowOffsetX = 1;
+      ctxt.shadowOffsetY = 1;
+      ctxt.shadowColor = "#000";
+      ctxt.shadowBlur = 2;
       ctxt.fill();
+
+      ctxt.restore();
     }
 
     function whenClicked(callback) {
@@ -75,8 +85,9 @@ define(function() {
           document.documentElement.scrollTop;
       }
 
-      x -= canvas.offsetLeft;
-      y -= canvas.offsetTop;
+      var rect = canvas.getBoundingClientRect();
+      x -= rect.left;
+      y -= rect.top;
 
       clickCallbacks.forEach(function(cb) {
         var col = Math.floor((x+8)/16) - 1;
