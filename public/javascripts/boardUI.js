@@ -37,8 +37,8 @@ define(function() {
     }
 
     function drawPiece(col, row, filled) {
-      var x = col * 16 + 8;
-      var y = row * 16 + 8;
+      var x = col * 16 + 16;
+      var y = row * 16 + 16;
       var radius = 6;
 
       ctxt.beginPath();
@@ -72,7 +72,11 @@ define(function() {
       y -= canvas.offsetTop;
 
       clickCallbacks.forEach(function(cb) {
-        cb(Math.floor(x/16), Math.floor(y/16));
+        var col = Math.floor((x+8)/16) - 1;
+        var row = Math.floor((y+8)/16) - 1;
+        if(col >= 0 && col <= 17 && row >= 0 && row <= 17) {
+          cb(col, row);
+        }
       });
       
     });
