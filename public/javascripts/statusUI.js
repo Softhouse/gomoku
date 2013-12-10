@@ -10,9 +10,15 @@ define(function() {
       winnerElement.textContent = 'Winner is: ' + winner;
     }
 
+    function clear() {
+      nextPlayerElement.textContent = '';
+      winnerElement.textContent = '';
+    }
+
     return {
       nextPlayer: nextPlayer,
-      winnerIs: winnerIs
+      winnerIs: winnerIs,
+      clear: clear
     };
   }
 
