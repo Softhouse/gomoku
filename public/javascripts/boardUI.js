@@ -36,10 +36,10 @@ define(function() {
 
     }
 
-    function drawPiece(col, row, filled) {
+    function drawPiece(col, row, color) {
       var x = col * 16 + 16;
       var y = row * 16 + 16;
-      var radius = 8;
+      var radius = 7;
 
       var blackfill = ctxt.createRadialGradient(x - radius/2,y - radius/2, 2,x - radius/2, y - radius/2 , radius);
       blackfill.addColorStop(0, '#676767');
@@ -54,14 +54,13 @@ define(function() {
       ctxt.beginPath();
       ctxt.arc(x, y, radius, 0, 2 * Math.PI);
 
-      ctxt.fillStyle = filled ? blackfill : whitefill;
-
-      // ctxt.setShadow(1, 1, 2, '#000' );
+      ctxt.fillStyle = (color == 'b' || color == 'B') ? blackfill : whitefill;
 
       ctxt.shadowOffsetX = 1;
       ctxt.shadowOffsetY = 1;
       ctxt.shadowColor = "#000";
       ctxt.shadowBlur = 2;
+
       ctxt.fill();
 
       ctxt.restore();

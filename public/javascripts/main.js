@@ -7,12 +7,12 @@ define(['boardUI', 'statusUI', 'external/domReady!'], function(boardUI, statusUI
   sui.nextPlayer('black');
 
   bui.drawBoard();
-  bui.drawPiece(0,0);
-  bui.drawPiece(0,17);
-  bui.drawPiece(17, 0, true);
-  bui.drawPiece(17, 17, true);
+  bui.drawPiece(0,0, 'w');
+  bui.drawPiece(0,17, 'w');
+  bui.drawPiece(17, 0, 'b');
+  bui.drawPiece(17, 17, 'B');
   bui.whenClicked(function (col, row) {
-    bui.drawPiece(col, row);
+    bui.drawPiece(col, row, 'w');
     sui.winnerIs('black');
   });
 });
