@@ -1,6 +1,7 @@
 define(function() {
 
   function create() {
+    
     var canvas = document.getElementById('board');
     var ctxt = canvas.getContext('2d');
     var clickCallbacks = [];

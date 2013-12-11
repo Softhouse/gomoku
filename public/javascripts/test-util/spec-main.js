@@ -12,7 +12,7 @@ requirejs.config({
     baseUrl: '/base',
 
     paths: {
-        'lodash': 'js/lodash.min'
+        'lodash': 'external/lodash'
     },
 
     // shim: {

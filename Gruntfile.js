@@ -16,16 +16,13 @@ module.exports = function(grunt) {
     originalWatch: {
       karma: {
         files: ['public/**/*.js'],
-        tasks: ['karma:watch:run', 'reload'],
+        tasks: ['karma:watch:run'],
         options: {
           livereload: true
         }
-      },
-      files: ['routes/**/*.js', 'views/**/*.jade', 'public/**/*.css'],
-      options: {
-        livereload: true
       }
     },
+
 
     express: {
       options: {

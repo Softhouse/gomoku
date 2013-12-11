@@ -5,7 +5,7 @@ module.exports = function(config) {
   config.set({
 
     // base path, that will be used to resolve files and exclude
-    basePath: 'public',
+    basePath: 'public/javascripts',
 
 
     // frameworks to use
@@ -14,12 +14,12 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-      {pattern: 'javascripts/**/*.js', included: false, served: true},
+      {pattern: '*.js', included: false, served: true},
       {pattern: 'specs/**/*.js', included: false},
       {pattern: 'test-util/chai.js', included: false},
       {pattern: 'test-util/sinon-chai.js', included: false},
       {pattern: 'test-util/expect.js', included: false},
-      {pattern: 'javascripts/external/lodash.min.js', included: false},
+      {pattern: 'external/lodash.js', included: false},
       'test-util/sinon-1.7.3.js',
       'test-util/spec-main.js'
     ],
@@ -32,9 +32,8 @@ module.exports = function(config) {
 
     // list of files to exclude
     exclude: [
-      'js/require.js',
-      'js/main.js',
-      'js/bootstrap.min.js'
+      'external/require.js',
+      'main.js'
     ],
 
 
