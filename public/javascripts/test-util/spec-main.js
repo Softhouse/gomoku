@@ -11,9 +11,9 @@ requirejs.config({
     // Karma serves files from '/base'
     baseUrl: '/base',
 
-    paths: {
-        'lodash': 'external/lodash'
-    },
+    // paths: {
+    //     'lodash': 'external/lodash'
+    // },
 
     // shim: {
     //     'underscore': {
