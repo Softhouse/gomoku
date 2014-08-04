@@ -11,6 +11,8 @@ Node.js is available at [http://nodejs.org/](http://nodejs.org/)
 
 ### Install command line tools
 
+For all the installations below, you might need to be administrator/root. If the installations fail, use sudo (if in *nix) or elevate the cmd program to run as Administrator (if in Windows).
+
 #### Grunt-cli
 
 ```Shell
