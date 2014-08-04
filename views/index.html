@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Gomoku</title>
+    <!--link(rel='stylesheet', href='/stylesheets/style.css')-->
+    <link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
+    <script data-main="/javascripts/main" src="javascripts/external/require.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-4">
+          <h1>Gomoku</h1>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-4">
+          <canvas id="board" width="304" height="304"></canvas>
+        </div>
+        <div class="col-md-2">
+          <div id="next-player"></div>
+          <div id="winner"></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
