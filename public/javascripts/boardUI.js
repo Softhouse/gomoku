@@ -79,10 +79,8 @@ define(function() {
         y = evt.y;
       }
       else {  // Firefox method to get the position
-        x = evt.clientX + document.body.scrollLeft +
-          document.documentElement.scrollLeft;
-        y = evt.clientY + document.body.scrollTop +
-          document.documentElement.scrollTop;
+        x = evt.clientX;
+        y = evt.clientY;
       }
 
       var rect = canvas.getBoundingClientRect();
