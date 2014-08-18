@@ -53,7 +53,7 @@ grunt watch
 
 This will start our web server and begin monitor our files for changes.
 
-Point your web browser to `http://localhost:6001`. You should see a game board with four game pieces positioned in
+Point your web browser to `http://localhost:3000`. You should see a game board with four game pieces positioned in
 each corner.
 
 Edit the file `gomoku/public/javascripts/specs/fail.spec.js`, and change the line `expect(3).to.equal(2)'` to 

@@ -5,6 +5,8 @@ module.exports = function(config) {
   config.set({
 
     // base path, that will be used to resolve files and exclude
+    // Change 'javascripts' into another path if you wish to skip to another
+    // part of the course.
     basePath: 'public/javascripts',
 
 
