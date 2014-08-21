@@ -7,7 +7,7 @@ define(['test-util/expect', 'boardUI'], function(expect, boardUI) {
 
     describe('drawBoard', function(){
       it('exists', function(){
-        boardUIInstance.drawBoard.should.not.be.undefined;
+        expect(boardUIInstance.drawBoard).not.to.be.undefined;
       });
     });
   });
