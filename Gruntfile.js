@@ -1,9 +1,10 @@
 module.exports = function(grunt) {
-  grunt.initConfig({
+  var files = ['app/javascripts/**/*.js', 'test/**/*.js', '!app/javascripts/external/*.js'];
 
+  grunt.initConfig({
     karma: {
       options: {
-        configFile: 'karma.conf.js'
+        configFile: 'karma.conf.js',
       },
       watch: {
         background: true
@@ -13,24 +14,27 @@ module.exports = function(grunt) {
       }
     },
 
-    originalWatch: {
+    watch: {
       karma: {
-        files: ['public/**/*.js'],
+        files: files,
         tasks: ['karma:watch:run'],
         options: {
           livereload: true
         }
+      },
+      jshint: {
+        files: files,
+        tasks: ['jshint'],
       }
-    },
 
+    },
 
     express: {
       options: {
       },
-
       dev: {
         options: {
-          script: 'app.js'
+         script: 'server.js'
         }
       }
     },
@@ -41,17 +45,22 @@ module.exports = function(grunt) {
         host: 'localhost',
         port: 3000
       }
-    }
+    },
 
+    jshint: {
+      files: files,
+      options: {
+        reporter: require('jshint-stylish')
+      }
+    }  
   });
 
   grunt.loadNpmTasks('grunt-karma');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-express-server');
   grunt.loadNpmTasks('grunt-reload');
 
-  grunt.renameTask('watch', 'originalWatch');
-
-  grunt.registerTask('watch', ['express:dev', 'reload', 'karma:watch:start', 'originalWatch']);
+  grunt.registerTask('default', ['express:dev', 'reload', 'karma:watch:start', 'watch']);
   grunt.registerTask('test', ['karma:unit']);
 };

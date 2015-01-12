@@ -1,31 +1,34 @@
 {
   "name": "gomoku",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "private": true,
   "scripts": {
-    "start": "node app.js"
+    "start": "node server.js"
   },
   "dependencies": {
-    "express": "4.7.4"
+    "express": "4.10.6"
   },
   "devDependencies": {
+    "chai": "^1.10.0",
     "grunt": "~0.4.5",
+    "grunt-contrib-jshint": "",
     "grunt-contrib-watch": "~0.6.1",
-    "grunt-express-server": "~0.4.17",
-    "grunt-karma": "~0.8.3",
+    "grunt-express-server": "~0.4.19",
+    "grunt-karma": "^0.9.0",
     "grunt-reload": "~0.2.0",
-    "karma": "~0.12.19",
-    "karma-chai": "0.1.0",
-    "karma-chrome-launcher": "~0.1.4",
-    "karma-coffee-preprocessor": "~0.2.1",
-    "karma-firefox-launcher": "~0.1.3",
+    "jshint-stylish": "^1.0.0",
+    "karma": "^0.12.30",
+    "karma-chai": "^0.1.0",
+    "karma-chai-sinon": "^0.1.4",
+    "karma-chrome-launcher": "~0.1.7",
+    "karma-firefox-launcher": "~0.1.4",
     "karma-html2js-preprocessor": "~0.1.0",
-    "karma-jasmine": "~0.1.5",
-    "karma-mocha": "~0.1.6",
+    "karma-mocha": "^0.1.10",
+    "karma-mocha-reporter": "^0.3.1",
     "karma-phantomjs-launcher": "~0.1.4",
-    "karma-requirejs": "~0.2.2",
     "karma-script-launcher": "~0.1.0",
-    "mocha": "~1.21.3",
-    "requirejs": "~2.1.14"
+    "karma-sinon": "^1.0.4",
+    "mocha": "^2.1.0",
+    "sinon": "^1.12.2"
   }
 }

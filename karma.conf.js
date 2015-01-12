@@ -3,63 +3,46 @@
 
 module.exports = function(config) {
   config.set({
-
-    // base path, that will be used to resolve files and exclude
-    // Change 'javascripts' into another path if you wish to skip to another
-    // part of the course.
-    basePath: 'public/javascripts',
-
+    basePath: '',
 
     // frameworks to use
-    frameworks: ['mocha', 'requirejs'],
-
+    frameworks: ['mocha', 'chai', 'chai-sinon'],
 
     // list of files / patterns to load in the browser
     files: [
-      {pattern: '*.js', included: false, served: true},
-      {pattern: 'specs/**/*.js', included: false},
-      {pattern: 'test-util/chai.js', included: false},
-      {pattern: 'test-util/sinon-chai.js', included: false},
-      {pattern: 'test-util/expect.js', included: false},
-      {pattern: 'external/lodash.js', included: false},
-      'test-util/sinon-1.7.3.js',
-      'test-util/spec-main.js'
+      'app/javascripts/*.js',
+      'test/**/*.js'
     ],
 
     plugins: [
       'karma-mocha',
+      'karma-chai',
+      'karma-chai-sinon',
       'karma-phantomjs-launcher',
-      'karma-requirejs'
+      'karma-mocha-reporter'
     ],
 
     // list of files to exclude
     exclude: [
-      'external/require.js',
-      'main.js'
+      'app/javascripts/main.js'
     ],
-
 
     // test results reporter to use
     // possible values: 'dots', 'progress', 'junit', 'growl', 'coverage'
-    reporters: ['progress'],
-
+    reporters: ['mocha'],
 
     // web server port
     port: 9876,
 
-
     // enable / disable colors in the output (reporters and logs)
     colors: true,
-
 
     // level of logging
     // possible values: config.LOG_DISABLE || config.LOG_ERROR || config.LOG_WARN || config.LOG_INFO || config.LOG_DEBUG
     logLevel: config.LOG_INFO,
 
-
     // enable / disable watching file and executing tests whenever any file changes
     autoWatch: true,
-
 
     // Start these browsers, currently available:
     // - Chrome
@@ -71,10 +54,8 @@ module.exports = function(config) {
     // - IE (only Windows; has to be installed with `npm install karma-ie-launcher`)
     browsers: ['PhantomJS'],
 
-
     // If browser does not capture in given timeout [ms], kill it
     captureTimeout: 60000,
-
 
     // Continuous Integration mode
     // if true, it capture browsers, run tests and exit
