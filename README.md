@@ -37,7 +37,7 @@ This will install all local packages needed by our application.
 This should run our (single) unit test. This test run should fail with:
 
 
-  × 3 equals 2
+	× 3 equals 2
 
 
 #### Running web server and monitor file changes
