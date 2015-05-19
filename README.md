@@ -5,9 +5,9 @@ An example application for experimenting with TDD and refactoring
 
 ##Installation
 
-### Install node.js
+### Install node.js 0.10
 
-Node.js is available at [http://nodejs.org/](http://nodejs.org/)
+Node.js is available at [http://nodejs.org/dist/v0.10.38/](http://nodejs.org/dist/v0.10.38/)
 
 ### Install command line tools
 
