@@ -4,12 +4,9 @@ function Board(){
 
 	// Create the board
 	(function(){
-		for(var y=0; y<dimension; y++){
-			board.push([]);
-			var row = board[y];
-			for(var x=0; x<dimension; x++){
-				row.push(undefined);
-			}
+		board=new Array(dimension);
+		for(var i=0;i<dimension;i++){
+			board[i] = new Array(dimension);
 		}
 	})();
 
@@ -118,7 +115,7 @@ function Board(){
         }
         console.log(row_output);
       }
-    }
+    };
 
 	/* **************************************************  */
 }
