@@ -5,7 +5,7 @@ An example application for experimenting with TDD and refactoring
 
 ##Installation
 
-### Install node.js 4.1.1
+### Install node.js 6.10
 
 Node.js is available at [http://nodejs.org/](http://nodejs.org/)
 
